@@ -109,6 +109,40 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg0);color:var(--text);li
 .sarrow{font-size:11px;color:var(--blue);margin-top:10px;opacity:0;transform:translateX(-6px);transition:opacity .2s,transform .2s;font-family:'IBM Plex Mono',monospace;}
 .scard:hover .sarrow{opacity:1;transform:none;}
 
+/* SENIOREN */
+:root{--sen:#0a9d68;--sen2:#067a52;--sen-glow:rgba(10,157,104,0.14);}
+.senior{padding:5rem 2.5rem;background:linear-gradient(135deg,#eafbf3 0%,#f5f7fb 55%,#eef1f7 100%);border-bottom:0.5px solid var(--border);border-top:3px solid var(--sen);position:relative;overflow:hidden;}
+.senior::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,var(--sen-glow),transparent 70%);}
+.senior::after{content:'';position:absolute;bottom:-100px;left:-100px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(10,157,104,.08),transparent 70%);}
+.senior-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
+.senior .slabel{color:var(--sen2);}
+.senior .stitle{color:#0d3d2c;}
+.senior-badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;padding:5px 16px;border-radius:20px;background:rgba(10,157,104,0.14);color:var(--sen2);border:0.5px solid rgba(10,157,104,.45);margin-bottom:1rem;letter-spacing:.06em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;font-weight:600;}
+.senior-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:2.5rem;}
+.senior-grid .vcard{background:var(--bg2);border-color:rgba(10,157,104,.18);}
+.senior-grid .vcard:hover{border-color:var(--sen);}
+.senior-grid .vico{background:rgba(10,157,104,.12);width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;}
+.senior-grid .vtitle{font-size:14px;}
+.senior-grid .vdesc{font-size:13px;}
+.senior-note{display:flex;align-items:center;gap:12px;margin-top:2.5rem;padding:1rem 1.3rem;border-radius:12px;background:rgba(10,157,104,.08);border:0.5px solid rgba(10,157,104,.35);}
+.senior-note span.emoji{font-size:24px;flex-shrink:0;}
+.senior-note p{font-size:13px;color:var(--muted);line-height:1.6;}
+.senior-note strong{color:#0d3d2c;}
+.senior-cta{margin-top:2rem;background:linear-gradient(135deg,var(--sen),var(--sen2));box-shadow:0 0 28px rgba(10,157,104,0.45);}
+.senior-cta:hover{box-shadow:0 6px 40px rgba(10,157,104,0.55);}
+.senior-subhead{margin-top:3rem;margin-bottom:.3rem;}
+.senior-subhead .slabel{margin-bottom:.2rem;}
+.senior-subhead h3{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;color:#0d3d2c;margin-bottom:.4rem;}
+.senior-subhead p{font-size:13px;color:var(--muted);line-height:1.65;max-width:560px;}
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:1.6rem;}
+.tech-card{display:flex;align-items:flex-start;gap:11px;background:var(--bg2);border:0.5px solid rgba(10,157,104,.18);border-radius:12px;padding:.9rem 1.05rem;transition:border-color .25s,transform .25s;}
+.tech-card:hover{border-color:var(--sen);transform:translateY(-3px);}
+.tech-ico{font-size:19px;flex-shrink:0;margin-top:1px;width:34px;height:34px;border-radius:8px;background:rgba(10,157,104,.10);display:flex;align-items:center;justify-content:center;}
+.tech-name{font-size:13px;font-weight:500;color:var(--text);line-height:1.4;font-family:'Syne',sans-serif;}
+.tech-tag{display:inline-block;font-size:10px;color:var(--sen2);background:rgba(10,157,104,.10);border:0.5px solid rgba(10,157,104,.3);border-radius:12px;padding:1px 8px;margin-top:4px;font-family:'IBM Plex Mono',monospace;}
+.tech-service{margin-top:1.4rem;font-size:12.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace;letter-spacing:.02em;}
+.tech-service strong{color:var(--sen2);}
+
 /* MODAL */
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(14px);z-index:500;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s;}
 .overlay.open{opacity:1;pointer-events:all;}
@@ -182,6 +216,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg0);color:var(--text);li
   <div class="nav-links">
     <a onclick="scrollSec('about')">Über uns</a>
     <a onclick="scrollSec('services')">Leistungen</a>
+    <a onclick="scrollSec('senioren')">Senioren-Service</a>
     <a onclick="scrollSec('itloesungen')">IT-Lösungen</a>
     <a onclick="scrollSec('contact')">Kontakt</a>
   </div>
@@ -254,6 +289,53 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg0);color:var(--text);li
   </div>
 </section>
 
+
+
+<section class="senior" id="senioren">
+  <div class="senior-inner">
+    <div class="reveal">
+      <div class="senior-badge">💙 Besonders wichtig für uns</div>
+      <div class="slabel">Digitale Hilfe für Senior:innen</div>
+      <h2 class="stitle">Seniorendigitalisierung – geduldig, verständlich, persönlich</h2>
+      <p class="ssub">Digitale Geräte sollen den Alltag erleichtern, nicht überfordern. Wir nehmen uns Zeit, erklären Schritt für Schritt und ohne Fachchinesisch – so oft, wie es nötig ist – damit Smartphone, Tablet und Computer wieder Spaß machen statt Sorgen zu bereiten.</p>
+    </div>
+    <div class="senior-grid">
+      <div class="vcard reveal d1"><div class="vico">🐢</div><div><div class="vtitle">Geduld statt Zeitdruck</div><div class="vdesc">Wir erklären in Ruhe, wiederholen gerne und verzichten auf Fachbegriffe.</div></div></div>
+      <div class="vcard reveal d2"><div class="vico">🏠</div><div><div class="vtitle">Hilfe direkt bei Ihnen zuhause</div><div class="vdesc">Kein weiter Weg nötig – wir kommen zu Ihnen und richten alles vor Ort ein.</div></div></div>
+      <div class="vcard reveal d3"><div class="vico">📱</div><div><div class="vtitle">Smartphone & Tablet einfach erklärt</div><div class="vdesc">Ersteinrichtung, Apps, Fotos und E-Mail – verständlich in Ihrem Tempo.</div></div></div>
+      <div class="vcard reveal d4"><div class="vico">🎥</div><div><div class="vtitle">Videotelefonie mit der Familie</div><div class="vdesc">WhatsApp, Skype & Co. einrichten, damit Kinder und Enkel immer nah sind.</div></div></div>
+      <div class="vcard reveal d1"><div class="vico">🛡️</div><div><div class="vtitle">Schutz vor Betrug & Abzocke</div><div class="vdesc">Wir sensibilisieren für Enkeltrick, Phishing-Mails und falsche Anrufer.</div></div></div>
+      <div class="vcard reveal d2"><div class="vico">🏦</div><div><div class="vtitle">Sicheres Online-Banking</div><div class="vdesc">Einrichtung und leicht verständliche Erklärung – Schritt für Schritt.</div></div></div>
+      <div class="vcard reveal d3"><div class="vico">🖨️</div><div><div class="vtitle">Drucker & Alltagsgeräte</div><div class="vdesc">Einrichtung von Drucker, Scanner und anderen Geräten im Haushalt.</div></div></div>
+      <div class="vcard reveal d4"><div class="vico">📖</div><div><div class="vtitle">Schriftliche Anleitungen</div><div class="vdesc">Auf Wunsch eine einfache Schritt-für-Schritt-Anleitung zum Nachlesen.</div></div></div>
+    </div>
+    <div class="senior-note reveal">
+      <span class="emoji">💡</span>
+      <p><strong>Gut zu wissen:</strong> Auf Wunsch beziehen wir gerne auch Angehörige mit ein, damit alle wissen, wie man sich im Notfall gegenseitig helfen kann.</p>
+    </div>
+
+    <div class="senior-subhead reveal">
+      <div class="slabel">Mehr Sicherheit im Alltag</div>
+      <h3>Sicherheitstechnik & Notrufsysteme für Zuhause</h3>
+      <p>Smarte Sensoren und Notrufsysteme sorgen dafür, dass im Ernstfall schnell reagiert werden kann – unauffällig im Hintergrund und ohne den Alltag einzuschränken.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card reveal d1"><div class="tech-ico">🆘</div><div><div class="tech-name">SOS-Armband (Senionex)</div><div class="tech-tag">Notruf per Knopfdruck</div></div></div>
+      <div class="tech-card reveal d2"><div class="tech-ico">⚠️</div><div><div class="tech-name">Sturzsensor</div><div class="tech-tag">erkennt Stürze automatisch</div></div></div>
+      <div class="tech-card reveal d3"><div class="tech-ico">🚪</div><div><div class="tech-name">Türsensor</div><div class="tech-tag">meldet Öffnen/Schließen</div></div></div>
+      <div class="tech-card reveal d4"><div class="tech-ico">🔥</div><div><div class="tech-name">Rauchmelder</div><div class="tech-tag">vernetzt & fernüberwacht</div></div></div>
+      <div class="tech-card reveal d1"><div class="tech-ico">🚶</div><div><div class="tech-name">Bewegungsmelder</div><div class="tech-tag">erkennt Aktivität im Raum</div></div></div>
+      <div class="tech-card reveal d2"><div class="tech-ico">📷</div><div><div class="tech-name">Kamera</div><div class="tech-tag">nur mit Zustimmung</div></div></div>
+      <div class="tech-card reveal d3"><div class="tech-ico">📲</div><div><div class="tech-name">Automatische Benachrichtigung</div><div class="tech-tag">direkt an die Familie</div></div></div>
+      <div class="tech-card reveal d4"><div class="tech-ico">💧</div><div><div class="tech-name">Wassersensor</div><div class="tech-tag">warnt bei Rohrbruch</div></div></div>
+      <div class="tech-card reveal d1"><div class="tech-ico">🚨</div><div><div class="tech-name">Einbruchalarm</div><div class="tech-tag">schützt Haus & Wohnung</div></div></div>
+      <div class="tech-card reveal d2"><div class="tech-ico">📱</div><div><div class="tech-name">App für Angehörige</div><div class="tech-tag">Übersicht in Echtzeit</div></div></div>
+    </div>
+    <p class="tech-service">Wir übernehmen für alle Systeme: <strong>Installation · Konfiguration · Reparatur</strong></p>
+
+    <button class="btn-glow senior-cta" onclick="scrollSec('contact')">Persönliche Beratung vereinbaren →</button>
+  </div>
+</section>
 
 <section class="circsec" id="itloesungen">
   <div class="circsec-inner">
